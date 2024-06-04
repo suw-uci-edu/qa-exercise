@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide Two Numbers</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #e0f7fa;
+            color: #bfc1cc;
+        }
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">MyApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapsee" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Homepage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/divide">Divide Two Numbers</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/add">Add Two Numbers</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center">Divide Two Numbers</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form id="divideForm">
+                <div class="form-group">
+                    <label for="number1">Number 1</label>
+                    <input type="text" class="form-control" id="number1" required>
+                </div>
+                <div class="form-group">
+                    <label for="number2">Number 2</label>
+                    <input type="text" class="form-control" id="number2" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Divide</button>
+            </form>
+            <div class="mt-4">
+                <h4 class="text-center">Result: <span id="result"></span></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center">
+    <div class="container mt-2">
+        MyApp &copy; 2023
+    </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies (Popper.js and jQuery) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+    document.getElementById('divideForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting the traditional way
+        const num1 = parseFloat(document.getElementById('number1').value);
+        const num2 = parseFloat(document.getElementById('number2').value);
+        const resultElement = document.getElementById('result');
+
+        if (num2 === 0) {
+            console.log('TODO -- Cannot divide by zero, deal with this case letter');
+        } else {
+            const result = num1 / num2;
+            resultElement.textContent = result.toFixed(3);
+        }
+    });
+</script>
+</body>
+</html>
